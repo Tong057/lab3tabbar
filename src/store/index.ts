@@ -1,11 +1,13 @@
 import { createStore, Store } from 'vuex';
 import { Preferences } from '@capacitor/preferences';
+import { Position } from '@capacitor/geolocation';
 
 interface Memory {
   id: string;
   image: string;
   title: string;
   description: string;
+  coordinates: Position;
 }
 
 interface State {
@@ -16,6 +18,7 @@ interface MemoryData {
   title: string;
   imageUrl: string;
   description: string;
+  coordinates: Position;
 }
 
 const store: Store<State> = createStore<State>({
@@ -34,6 +37,7 @@ const store: Store<State> = createStore<State>({
         title: memoryData.title,
         image: memoryData.imageUrl,
         description: memoryData.description,
+        coordinates: memoryData.coordinates
       };
       state.memories.unshift(newMemory);
     },

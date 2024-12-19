@@ -3,7 +3,7 @@
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-back-button :default-href="`/tabs/memories`"></ion-back-button>
+          <ion-back-button :default-href="`/memories`"></ion-back-button>
         </ion-buttons>
         <ion-title>{{ loadedMemory ? loadedMemory.title : 'Loading...' }}</ion-title>
       </ion-toolbar>
@@ -11,7 +11,7 @@
     <ion-content>
       <h2 v-if="!loadedMemory">Could not find a memory for the given id.</h2>
     <memory-overview v-else :title="loadedMemory.title" :image="loadedMemory.image"
-      :description="loadedMemory.description"></memory-overview>
+      :description="loadedMemory.description" :timestamp="loadedMemory.id" :coordinates="loadedMemory.coordinates"></memory-overview>
     </ion-content>
   </ion-page>
 </template>

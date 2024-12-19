@@ -1,4 +1,4 @@
-package ionic.lab3tabbar;
+package io.ionic.starter;
 
 import com.getcapacitor.BridgeActivity;
 
